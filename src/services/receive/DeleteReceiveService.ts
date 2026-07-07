@@ -39,8 +39,8 @@ class DeleteReceiveService {
     // Atualizar saldo do usuário
     const valueUpdated =
       receive.type === "despesa"
-        ? findUser.balance - receive.value
-        : findUser.balance + receive.value;
+        ? findUser.balance + receive.value
+        : findUser.balance - receive.value;
 
     await prismaClient.user.update({
       where: {
